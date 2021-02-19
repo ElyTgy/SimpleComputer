@@ -1,0 +1,14 @@
+/*
+out 1 if (a==1 or b==1 or c==1 or d==1)
+*       0 otherwise
+*/
+
+CHIP Or8Input{
+    IN a, b, c, d, e, f, g, h;
+    OUT out;
+
+    PARTS:
+    Or4Way(a=a, b=b, c=c, d=d, out=abcd);
+    Or4Way(a=abcd, b=e, c=f, d=g, out=abcdefg);
+    Or(a=abcdefg, b=h, out=out);
+}

@@ -1,0 +1,13 @@
+/**
+    for i[0..15] And(a, b[i])
+*/
+
+CHIP And16Broadcast{
+    IN a, b[16];
+    OUT out[16];
+
+    PARTS:
+    Nand16Broadcast(a=a, b=b, out=nand);
+    Not16(in=nand, out=out);
+
+}

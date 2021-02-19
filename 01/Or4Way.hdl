@@ -1,0 +1,14 @@
+/*
+out 1 if (a==1 or b==1 or c==1 or d==1)
+*       0 otherwise
+*/
+
+CHIP Or4Way{
+    IN a, b, c, d;
+    OUT out;
+
+    PARTS:
+    Or(a=a, b=b, out=aOrB);
+    Or(a=aOrB, b=c, out=OrC);
+    Or(a=OrC, b=d, out=out);
+}
