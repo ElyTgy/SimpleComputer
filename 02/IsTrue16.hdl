@@ -1,0 +1,13 @@
+/*
+*return 1 if all diggits are 1
+*        otherwise0
+*/
+
+CHIP IsTrue16{
+    IN a[16], b[16];
+    OUT out;
+
+    PARTS:
+    And16(a=a, b=b, out=and);
+    And(a=and[0], b=and[1], out=p);
+}

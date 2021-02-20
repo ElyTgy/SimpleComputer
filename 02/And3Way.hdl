@@ -1,0 +1,13 @@
+/**
+out = 1 if (a == 1 and b == 1 and c==1)
+*       0 otherwise
+*/
+
+CHIP And3Way{
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    And(a=a, b=b, out=aAndB);
+    And(a=aAndB, b=c, out=out);
+}

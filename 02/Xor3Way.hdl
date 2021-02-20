@@ -1,0 +1,13 @@
+/*
+* Exclusive-or gate:
+* out = not (a == b == c)
+*/
+
+CHIP Xor3Way{
+    IN a, b, c;
+    OUT out;
+
+    PARTS:
+    Xor(a=a, b=b, out=aXorb);
+    Xor(a=aXorb, b=c, out=out);
+}

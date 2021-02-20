@@ -1,0 +1,15 @@
+/**
+*perform and operation for all the digits in a number
+*/
+
+CHIP And16Digits{
+    IN a[16];
+    OUT out;
+
+    PARTS:
+    And4Way(a=isZero[0], b=isZero[1], c=isZero[2], d=isZero[3], out=and1);
+    And4Way(a=isZero[4], b=isZero[5], c=isZero[6], d=isZero[7], out=and2);
+    And4Way(a=isZero[8], b=isZero[9], c=isZero[10], d=isZero[11], out=and3);
+    And4Way(a=isZero[12], b=isZero[13], c=isZero[14], d=isZero[15], out=zr);
+
+}
