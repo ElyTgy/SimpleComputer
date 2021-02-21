@@ -10,10 +10,23 @@
  * (the loaded value will be emitted to out from the next time step onward).
  */
 
-CHIP RAM8 {
+CHIP RAM8{
     IN in[16], load, address[3];
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+
+    DMux8Way(in=load, sel=address, 
+    a=R0load, b=R1load, c=R2load, d=R3load, e=R4load, f=R5load, g=R6load, h=R7load);
+
+    Register(in=in, load=R0load, out=R0);
+    Register(in=in, load=R1load, out=R1);
+    Register(in=in, load=R2load, out=R2);
+    Register(in=in, load=R3load, out=R3);
+    Register(in=in, load=R4load, out=R4);
+    Register(in=in, load=R5load, out=R5);
+    Register(in=in, load=R6load, out=R6);
+    Register(in=in, load=R7load, out=R7);
+
+    Mux8Way16(a=R0, b=R1, c=R2, d=R3, e=R4, f=R5, g=R6, h=R7, sel=address, out=out);
 }
