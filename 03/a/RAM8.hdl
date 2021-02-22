@@ -15,7 +15,6 @@ CHIP RAM8{
     OUT out[16];
 
     PARTS:
-
     DMux8Way(in=load, sel=address, 
     a=R0load, b=R1load, c=R2load, d=R3load, e=R4load, f=R5load, g=R6load, h=R7load);
 
