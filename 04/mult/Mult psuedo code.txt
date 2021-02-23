@@ -1,0 +1,8 @@
+R0 = a
+R1 = n
+i = 0
+sum = 0
+
+while i =< n:
+    sum += R0
+    i += 1
