@@ -1,3 +1,3 @@
 # SimpleComputer
 
-All the projects from the book "The Elements of Computing Systems"
+Implementation of the first part of the Nand to Tetris book, covering everything from how NAND chips work to building up a working CPU
